@@ -1,19 +1,71 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3 uid="uid://pfityy0fxji6"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_player"]
+[ext_resource type="Script" uid="uid://dw1ydiy8w2fpa" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://cc34oyqs7cvfe" path="res://scripts/player.gd" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://081b2q51jqqi" path="res://scrubby_left.jpeg" id="3_sugp2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyhfs"]
+atlas = ExtResource("3_sugp2")
+region = Rect2(682, 0, 341, 504)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbgi4"]
+atlas = ExtResource("3_sugp2")
+region = Rect2(341, 0, 341, 504)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
+atlas = ExtResource("3_sugp2")
+region = Rect2(0, 0, 341, 504)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
+atlas = ExtResource("3_sugp2")
+region = Rect2(682, 520, 341, 504)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("3_sugp2")
+region = Rect2(341, 520, 341, 504)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5sh1b"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyhfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbgi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tefeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipki")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_player"]
 radius = 14.0
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1792204269]
 script = ExtResource("1_main")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=539507667]
 position = Vector2(480, 270)
 script = ExtResource("2_player")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1271247893]
+position = Vector2(0, 120)
+sprite_frames = SubResource("SpriteFrames_5sh1b")
+animation = &"walk_left"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1499156249]
 shape = SubResource("CircleShape2D_player")
