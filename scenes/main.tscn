@@ -13,5 +13,7 @@ script = ExtResource("1_main")
 position = Vector2(480, 270)
 script = ExtResource("2_player")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_player")
